@@ -1,0 +1,106 @@
+.header_container {
+    width: 100%;
+    height: 100vh;
+
+    .back_cont {
+        height: 70%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+
+        h2 {
+            font-size: 90px;
+            color: #000;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .stroked {
+            -webkit-text-fill-color: #fff; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+
+        .center_cont {
+            display: flex;
+            flex-direction: column;
+            line-height: 0;
+            animation: showuptext forwards 1s ease;
+
+            @keyframes showuptext {
+                0% {
+                    gap: 0;
+                }
+
+                75% {
+                    gap: 110px;
+                }
+
+                100% {
+                    gap: 90px;
+                }
+            }
+        }
+
+        .left_cont {
+            margin-top: -120px;
+            opacity: 0.6;
+            display: flex;
+            flex-direction: column;
+            line-height: 0;
+            animation: showuptext2 forwards 0.3s ease;
+
+            @keyframes showuptext2 {
+                0% {
+                    gap: 0;
+                }
+
+                100% {
+                    gap: 90px;
+                }
+            }
+        }
+
+        .right_cont {
+            margin-top: 150px;
+            opacity: 0.6;
+            display: flex;
+            flex-direction: column;
+
+            line-height: 0;
+            animation: showuptext3 forwards 0.5s ease;
+
+            @keyframes showuptext3 {
+                0% {
+                    gap: 0;
+                }
+
+                100% {
+                    gap: 90px;
+                }
+            }
+        }
+    }
+
+    .quote_cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+
+        p {
+            max-width: 700px;
+            font-weight: bold;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        h5 {
+            opacity: .8;
+            font-size: 22px;
+        }
+    }
+}

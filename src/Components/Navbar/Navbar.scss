@@ -1,0 +1,32 @@
+.navbar_contianer {
+    height: 15vh;
+    width: 100%;
+    background-color: transparent;
+
+    .master_contianer {
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+
+        .left_container {
+            img {
+                width: 80px;
+            }
+        }
+
+        .right_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            list-style: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--darl-color);
+
+        }
+    }
+}
