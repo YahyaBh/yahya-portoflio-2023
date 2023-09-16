@@ -5,4 +5,63 @@
     background-size: cover;
     background-attachment: scroll;
     background-clip: border-box;
+    height: 100vh;
+
+    .main_cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        line-height: 0.2rem;
+        margin: 30px;
+
+        h2 {
+            font-size: 60px;
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .main_text {
+            color: #1e1e1e;
+            z-index: 2;
+        }
+
+        .main_text_under {
+            color: #fff;
+            -webkit-text-fill-color: #fff; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            z-index: 1;
+        }
+    }
+
+    .container_about_cont {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        gap: 50px;
+
+        .cont_about {
+            background-color: #1e1e1e;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            padding: 30px;
+            max-width: 400px;
+            border: 2px 2px 2px #1e1e1e;
+            position: relative;
+        }
+
+        .left_cont {
+            float: left;
+        }
+
+        .right_cont {
+            float: right;
+        }
+    }
 }
