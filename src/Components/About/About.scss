@@ -1,11 +1,10 @@
 .about_cont {
-    background: url(../../../public//Images/Background_About.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
     background-clip: border-box;
-    height: 100vh;
+    height: 100%;
 
     .main_cont {
         display: flex;
@@ -14,7 +13,9 @@
         flex-direction: column;
         width: 100%;
         line-height: 0.2rem;
-        margin: 30px;
+        margin: 30px 0;
+
+
 
         h2 {
             font-size: 60px;
@@ -36,32 +37,147 @@
         }
     }
 
+    .disabled {
+        opacity: 0 !important;
+        z-index: 0 !important;
+    }
+
+    .about_modal {
+        position: fixed;
+        top: 0;
+        display: flex;
+        visibility: hidden;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        z-index: 10;
+        backdrop-filter: blur(30px);
+        background-color: #1e1e1ea1;
+        opacity: 1;
+        transition: all .5s ease;
+
+        .modal_container {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            line-height: 2.5rem;
+            max-width: 700px;
+
+            h2 {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            p {
+                font-size: 24px;
+            }
+        }
+    }
+
     .container_about_cont {
         display: flex;
+        flex-wrap: nowrap;
         justify-content: space-evenly;
-        flex-direction: column;
         gap: 50px;
+        padding: 20px;
 
         .cont_about {
-            background-color: #1e1e1e;
-            color: #fff;
+            flex-basis: 30%;
+            position: relative;
+
+            .face_top {
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                color: #1e1e1e;
+                padding: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 30px;
+                cursor: pointer;
+
+                &:hover {
+                    svg {
+                        transition: all 0.3s ease;
+                        opacity: 0;
+                    }
+
+                    h2 {
+                        transition: all 0.3s ease;
+                        transform: translateY(-30px);
+                    }
+                }
+
+                svg {
+                    font-size: 35px;
+
+                    animation: up_down_anim 4s infinite ease;
+
+                    @keyframes up_down_anim {
+                        0% {
+                            transform: translateY(0px);
+                        }
+
+                        50% {
+                            transform: translateY(20px);
+                        }
+
+                        0% {
+                            transform: translateY(0px);
+                        }
+                    }
+                }
+            }
+
+            .face_bottom {
+                display: none;
+                padding: 30px;
+            }
+        }
+    }
+
+
+    .container_w_pic {
+        padding: 40px ;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+
+
+        .text_cont {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 10px;
+            width: 50%;
+
+            h2 {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            p {
+                font-size: 22px;
+                font-weight: 500;
+                line-height: 1.7rem;
+            }
+        }
+
+        .pic_cont {
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            flex-direction: column;
-            padding: 30px;
-            max-width: 400px;
-            border: 2px 2px 2px #1e1e1e;
-            position: relative;
-        }
+            width: 50%;
 
-        .left_cont {
-            float: left;
-        }
-
-        .right_cont {
-            float: right;
+            img {
+                width: 90%;
+            }
         }
     }
 }

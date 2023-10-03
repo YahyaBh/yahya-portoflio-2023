@@ -1,0 +1,90 @@
+.hire_container {
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .head_text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        line-height: 0.7rem;
+        margin: 60px 0;
+
+        h2 {
+            font-size: 60px;
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .main_text {
+            color: #1e1e1e;
+            z-index: 2;
+        }
+
+        .main_text_under {
+            color: #fff;
+            -webkit-text-fill-color: #fff; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            z-index: 1;
+        }
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 40%;
+
+        .inactive {
+            height: 0 !important;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        input {
+            padding: 20px 15px;
+            border: none;
+            font-size: 24px;
+            border-radius: 20px;
+            transition: all .3s ease;
+        }
+
+        textarea {
+            padding: 20px 15px;
+            border: none;
+            font-size: 24px;
+            border-radius: 20px;
+            resize: none;
+            transition: all .3s ease;
+
+        }
+
+        button {
+            background-color: #1e1e1e;
+            padding: 16px 15px;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 800;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            transition: all .3s ease;
+
+            svg {
+                font-size: 30px;
+            }
+        }
+    }
+}

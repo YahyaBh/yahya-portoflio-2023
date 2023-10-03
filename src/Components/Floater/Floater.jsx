@@ -17,12 +17,19 @@ const Floater = () => {
     return (
         <div className='floater_cont'>
 
-            <h3>AVAILABLE FOR WORK <HiOutlineStatusOnline /></h3>
+            <div className="container-left">
+
+                <h3>AVAILABLE FOR WORK <HiOutlineStatusOnline /></h3>
 
 
-            <button onClick={handleDownloaded}>
-                DOWNLOAD CV <GrDocumentUser/>
-            </button>
+                <button onClick={handleDownloaded}>
+                    DOWNLOAD CV <GrDocumentUser />
+                </button>
+            </div>
+
+            <div className="container-right">
+                <GrDocumentUser />
+            </div>
 
         </div>
     )

@@ -1,0 +1,119 @@
+.skills_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    padding: 40px 0px;
+
+    .container {
+        .head_text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            line-height: 0.8rem;
+            margin: 30px 0;
+
+    
+
+            h2 {
+                font-size: 60px;
+                font-weight: 700;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .main_text {
+                color: #1e1e1e;
+                z-index: 2;
+            }
+
+            .main_text_under {
+                color: #fff;
+                -webkit-text-fill-color: #fff; /* Will override color (regardless of order) */
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: black;
+                z-index: 1;
+            }
+        }
+        .skills {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            gap: 30px;
+
+            .skill_container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                cursor: pointer;
+
+                .cycle_container {
+                    height: 90px;
+                    width: 90px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    box-shadow: 0px 0px 30px -10px #1e1e1e;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer; /* Add this to show it's clickable */
+                    position: relative; /* Add this for absolute positioning */
+                    transition: transform 0.3s ease; /* Add this line */
+
+                    svg {
+                        font-size: 60px;
+                    }
+                }
+
+                .body_container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 0;
+                    height: 70px;
+                    opacity: 0;
+                    visibility: hidden;
+                    padding: 10px;
+                    background-color: #fff;
+                    border-radius: 40px;
+                    box-shadow: 0px 0px 30px -10px #1e1e1e;
+                    transform: translateX(-50%);
+                    left: 50%;
+                    position: relative;
+                    transition:
+                        width 0.3s ease,
+                        opacity 0.1s ease,
+                        visibility 0.3s;
+                }
+            }
+
+            .active {
+                .cycle_container {
+                    transform: scale(0.9); /* Add this line */
+                    opacity: 0.6;
+                }
+                .body_container {
+                    width: 700px; /* Adjust the width as needed */
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+
+    .text_bottom {
+        text-align: center;
+
+        p {
+            font-size: 16px;
+            text-transform: uppercase;
+
+        }
+    }
+}
