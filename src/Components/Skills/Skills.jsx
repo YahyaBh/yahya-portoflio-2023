@@ -1,12 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Skills.scss'
 import { AiOutlineHtml5 } from 'react-icons/ai'
+import { urlFor, client } from '../../Client';
 
 const Skills = () => {
 
     const [skill, setSkill] = useState('');
 
+    const [experiences, setExperiences] = useState([]);
+    const [skills, setSkills] = useState([]);
 
+    useEffect(() => {
+        const query = '*[_type == "experiences"]';
+        const skillsQuery = '*[_type == "skills"]';
+
+        client.fetch(query).then((data) => {
+            setExperiences(data);
+        });
+
+        client.fetch(skillsQuery).then((data) => {
+            setSkills(data);
+        });
+    }, []);
 
 
     const handleSkill = (e) => {
@@ -31,19 +46,22 @@ const Skills = () => {
 
                 <div className="skills">
 
-                    <div onClick={e => handleSkill('html')} className={`skill_container ${skill === 'html' ? 'active' : ''}`}>
+                    {skills.map((skill, index) => (
+                        <div key={index} onClick={e => handleSkill(skill.name)} className={`skill_container ${skill === skill.name ? 'active' : ''}`}>
 
-                        <div className="cycle_container">
-                            <AiOutlineHtml5 />
+                            <div className="cycle_container">
+                                <img src={urlFor(skill.icon)} alt={skill.name} />
+                            </div>
+
+                            <div className="body_container">
+                                <p>
+                                    {skill.desc}
+                                </p>
+                            </div>
+
                         </div>
+                    ))}
 
-                        <div className="body_container">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit in fac  et non proident in id adip   euismod en         iaculis
-                            </p>
-                        </div>
-
-                    </div>
 
 
                 </div>
