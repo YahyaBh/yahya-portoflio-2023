@@ -1,22 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import './Skills.scss'
-import { AiOutlineHtml5 } from 'react-icons/ai'
 import { urlFor, client } from '../../Client';
 
 const Skills = () => {
 
     const [skill, setSkill] = useState('');
 
-    const [experiences, setExperiences] = useState([]);
     const [skills, setSkills] = useState([]);
 
     useEffect(() => {
-        const query = '*[_type == "experiences"]';
         const skillsQuery = '*[_type == "skills"]';
 
-        client.fetch(query).then((data) => {
-            setExperiences(data);
-        });
 
         client.fetch(skillsQuery).then((data) => {
             setSkills(data);

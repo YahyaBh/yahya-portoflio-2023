@@ -54,9 +54,12 @@ const About = () => {
                 <div className='cont_about' onClick={e => handleAbout('who')}>
 
                     <div className='face_top'>
-                        <BsPersonBadge />
+                        <div className="padd">
 
-                        <h2>WHO AM I</h2>
+                            <BsPersonBadge />
+
+                            <h2>WHO AM I</h2>
+                        </div>
                     </div>
 
 
@@ -67,9 +70,11 @@ const About = () => {
                 <div className='cont_about' onClick={e => handleAbout('programming')}>
 
                     <div className='face_top'>
-                        <DiCode />
+                        <div className="padd">
+                            <DiCode />
 
-                        <h2>WHY I CHOOSED PROGRAMMING</h2>
+                            <h2>WHY I CHOOSED PROGRAMMING</h2>
+                        </div>
                     </div>
 
                 </div>
@@ -77,9 +82,12 @@ const About = () => {
                 <div className='cont_about' onClick={e => handleAbout('hiring')}>
 
                     <div className='face_top'>
-                        <MdWorkOutline />
+                        <div className="padd">
 
-                        <h2>WHY HIRING ME</h2>
+                            <MdWorkOutline />
+
+                            <h2>WHY HIRING ME</h2>
+                        </div>
                     </div>
 
                 </div>
